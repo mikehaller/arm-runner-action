@@ -1,0 +1,13 @@
+name: Test custom url
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: pguyot/arm-runner-action@HEAD
+      with:
+        base_image: https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-05-28/2021-05-07-raspios-buster-armhf-lite.zip
+        commands: |
+          grep -i rasp /etc/os-release
+          uname -a
