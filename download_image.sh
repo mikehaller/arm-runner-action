@@ -14,6 +14,12 @@ case $1 in
     "dietpi:rpi_armv6_buster")
         url=https://dietpi.com/downloads/images/DietPi_RPi-ARMv6-Buster.7z
     ;;
+    "ubuntu_server:21.04")
+        url=https://cdimage.ubuntu.com/releases/21.04/release/ubuntu-21.04-preinstalled-server-arm64+raspi.img.xz
+    ;;
+    "ubuntu_server:20.04.3")
+        https://cdimage.ubuntu.com/releases/20.04.3/release/ubuntu-20.04.3-preinstalled-server-arm64+raspi.img.xz
+    ;;
     https:/*|http:/*)
         url="$1"
     ;;
