@@ -71,7 +71,7 @@ runs:
       run: |
         #sudo apt-mark hold 5.8.0-1039-azure && apt-get update && 
         sudo apt-get update
-        sudo apt-get upgrade 
+        sudo apt-get full-upgrade -y 
         sudo apt-get install -y qemu qemu-user-static binfmt-support parted wget dosfstools zip 
         #g++-aarch64-linux-gnu libstdc++-10-dev-arm64-cross
       shell: bash
