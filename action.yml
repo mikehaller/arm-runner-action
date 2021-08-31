@@ -69,7 +69,8 @@ runs:
   steps:
     - name: Install dependencies
       run:
-        sudo apt-get update && sudo apt-get install -y qemu qemu-user-static binfmt-support parted wget dosfstools zip g++-aarch64-linux-gnu libstdc++-10-dev-arm64-cross
+        sudo apt-get update && sudo apt-get install -y qemu qemu-user-static binfmt-support parted wget dosfstools zip 
+        #g++-aarch64-linux-gnu libstdc++-10-dev-arm64-cross
       shell: bash
     - name: Install qemu wrapper
       run: |
