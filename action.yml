@@ -68,7 +68,7 @@ runs:
   using: "composite"
   steps:
     - name: Install dependencies
-      run:
+      run: |
         #sudo apt-mark hold 5.8.0-1039-azure && apt-get update && 
         sudo apt-get update
         sudo apt-get upgrade 
