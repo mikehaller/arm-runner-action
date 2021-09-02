@@ -20,6 +20,9 @@ case $1 in
     "ubuntu_server:20.04.3")
         url=https://cdimage.ubuntu.com/releases/20.04.3/release/ubuntu-20.04.3-preinstalled-server-arm64+raspi.img.xz
     ;;
+    "ubuntu_server:21.04-swdc")
+        url=https://swdcdownloads.blob.core.windows.net/$web/swdc_image_v8_24082021.zip
+    ;;
     https:/*|http:/*)
         url="$1"
     ;;
