@@ -35,8 +35,8 @@ mount "${bootdev}" "${mount}/boot"
 # Prep the chroot
 mount --bind /proc "${mount}/proc"
 mount --bind /sys "${mount}/sys"
-mount --bind /dev "${mount}/dev"
-mount --bind /dev/pts "${mount}/dev/pts"
+#mount --bind /dev "${mount}/dev"
+#mount --bind /dev/pts "${mount}/dev/pts"
 
 #cp "${mount}/etc/resolv.conf" "${mount}/etc/_resolv.conf"
 cp --remove-destination /etc/resolv.conf "${mount}/etc/resolv.conf"
