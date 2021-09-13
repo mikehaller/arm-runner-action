@@ -33,8 +33,8 @@ mount "${rootdev}" "${mount}"
 mount "${bootdev}" "${mount}/boot"
 
 # Prep the chroot
-mount --bind /proc "${mount}/proc"
-mount --bind /sys "${mount}/sys"
+#mount --bind /proc "${mount}/proc"
+#mount --bind /sys "${mount}/sys"
 #mount --bind /dev "${mount}/dev"
 #mount --bind /dev/pts "${mount}/dev/pts"
 
