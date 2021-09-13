@@ -153,8 +153,8 @@ runs:
         if [ "${{ inputs.use_systemd_nspawn }}x" != "x" -a "${{ inputs.use_systemd_nspawn }}x" != "nox" ]; then
             sudo apt-get install -y systemd-container
             sudo mv ${{ steps.mount_image.outputs.mount }}/tmp/commands.sh ${{ steps.mount_image.outputs.mount }}/usr/bin/commands.sh
-            #sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} /usr/bin/commands.sh
-            sudo systemd-nspawn --capability=all -bD ${{ steps.mount_image.outputs.mount }}
+            sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} /usr/bin/commands.sh
+            #sudo systemd-nspawn --capability=all -bD ${{ steps.mount_image.outputs.mount }}
         else
             sudo chroot ${{ steps.mount_image.outputs.mount }} /tmp/commands.sh
         fi
