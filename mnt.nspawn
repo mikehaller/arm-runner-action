@@ -1,0 +1,10 @@
+[Exec]
+Capability=all
+SystemCallFilter=add_key keyctl
+PrivateUsers=no
+
+[Files]
+Bind=/sys/fs/cgroup
+
+[Network]
+VirtualEthernet=no
