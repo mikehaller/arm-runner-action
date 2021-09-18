@@ -155,7 +155,9 @@ runs:
             sudo mv ${{ steps.mount_image.outputs.mount }}/tmp/commands.sh ${{ steps.mount_image.outputs.mount }}/usr/bin/commands.sh
             sudo ln -s ${{ steps.mount_image.outputs.mount }} /var/lib/machines
             sudo machinectl list-images
+            sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} /usr/bin/commands.sh
             sudo machinectl start mnt
+            journalctl --unit systemd-nspawn@mnt.service --no-pager
             sudo machinectl list-images
             #sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} /usr/bin/commands.sh
             #sudo systemd-nspawn --capability=all -bD ${{ steps.mount_image.outputs.mount }}
