@@ -161,8 +161,12 @@ runs:
             sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} /usr/bin/commands.sh
             sudo journalctl --unit systemd-nspawn@mnt.service --no-pager
             sudo machinectl enable mnt
-            sudo machinectl start mnt
-            sudo machinectl list-images
+            sudo systemctl status systemd-nspawn@mnt.service
+            sudo systemctl start systemd-nspawn@mnt.service
+            sudo systemctl status systemd-nspawn@mnt.service
+            sudo journalctl --unit systemd-nspawn@mnt.service --no-pager
+            #sudo machinectl start mnt
+            #sudo machinectl list-images
             #sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} /usr/bin/commands.sh
             #sudo systemd-nspawn --capability=all -bD ${{ steps.mount_image.outputs.mount }}
         else
