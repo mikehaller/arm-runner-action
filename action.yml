@@ -154,7 +154,7 @@ runs:
             sudo apt-get install -y systemd-container nftables
             sudo mv ${{ steps.mount_image.outputs.mount }}/tmp/commands.sh ${{ steps.mount_image.outputs.mount }}/usr/bin/commands.sh
             sudo ln -s ${{ steps.mount_image.outputs.mount }} /var/lib/machines
-            sudo sudo machinectl list-images
+            sudo machinectl list-images
             #sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} /usr/bin/commands.sh
             #sudo systemd-nspawn --capability=all -bD ${{ steps.mount_image.outputs.mount }}
         else
