@@ -155,16 +155,16 @@ runs:
             sudo mv ${{ steps.mount_image.outputs.mount }}/tmp/commands.sh ${{ steps.mount_image.outputs.mount }}/usr/bin/commands.sh
             sudo ln -s ${{ steps.mount_image.outputs.mount }} /var/lib/machines
             sudo machinectl list-images
-            sudo mkdir -p ${{ steps.mount_image.outputs.mount }}/etc/systemd/nspawn
-            sudo cp ${{ github.action_path }}/mnt.nspawn ${{ steps.mount_image.outputs.mount }}/etc/systemd/nspawn
-            sudo cat ${{ steps.mount_image.outputs.mount }}/etc/systemd/nspawn/mnt.nspawn
+            #sudo mkdir -p ${{ steps.mount_image.outputs.mount }}/etc/systemd/nspawn
+            #sudo cp ${{ github.action_path }}/mnt.nspawn ${{ steps.mount_image.outputs.mount }}/etc/systemd/nspawn
+            #sudo cat ${{ steps.mount_image.outputs.mount }}/etc/systemd/nspawn/mnt.nspawn
             sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} /usr/bin/commands.sh
-            sudo journalctl --unit systemd-nspawn@mnt.service --no-pager
-            sudo machinectl enable mnt
-            sudo systemctl status systemd-nspawn@mnt.service
-            sudo systemctl start systemd-nspawn@mnt.service
-            sudo systemctl status systemd-nspawn@mnt.service
-            sudo journalctl --unit systemd-nspawn@mnt.service --no-pager
+            #sudo journalctl --unit systemd-nspawn@mnt.service --no-pager
+            #sudo machinectl enable mnt
+            #sudo systemctl status systemd-nspawn@mnt.service
+            #sudo systemctl start systemd-nspawn@mnt.service
+            #sudo systemctl status systemd-nspawn@mnt.service
+            #sudo journalctl --unit systemd-nspawn@mnt.service --no-pager
             #sudo machinectl start mnt
             #sudo machinectl list-images
             #sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} /usr/bin/commands.sh
