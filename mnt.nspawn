@@ -7,4 +7,4 @@ PrivateUsers=no
 Bind=/sys/fs/cgroup
 
 [Network]
-VirtualEthernet=yes
+VirtualEthernet=no
