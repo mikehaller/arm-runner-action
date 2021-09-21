@@ -158,6 +158,9 @@ runs:
             #sudo mkdir -p ${{ steps.mount_image.outputs.mount }}/etc/systemd/nspawn
             #sudo cp ${{ github.action_path }}/mnt.nspawn ${{ steps.mount_image.outputs.mount }}/etc/systemd/nspawn
             #sudo cat ${{ steps.mount_image.outputs.mount }}/etc/systemd/nspawn/mnt.nspawn
+            sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} chown root /etc/sudo.conf
+            sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} chown -R root /etc/sudoers.d
+            sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} chown -R root /usr/lib/sudo
             sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} /usr/bin/commands.sh
             #sudo journalctl --unit systemd-nspawn@mnt.service --no-pager
             #sudo machinectl enable mnt
