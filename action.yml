@@ -69,11 +69,8 @@ runs:
   steps:
     - name: Install dependencies
       run: |
-        #sudo apt-mark hold 5.8.0-1039-azure && apt-get update && 
         sudo apt-get update
-        #sudo apt-get full-upgrade -y 
-        sudo apt-get install -y qemu qemu-user-static binfmt-support parted wget dosfstools zip 
-        #g++-aarch64-linux-gnu libstdc++-10-dev-arm64-cross
+        sudo apt-get install -y qemu qemu-user-static binfmt-support parted wget dosfstools zip
       shell: bash
     - name: Install qemu wrapper
       run: |
@@ -162,16 +159,6 @@ runs:
             sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} chown -R root /etc/sudoers.d
             sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} chown -R root /usr/lib/sudo
             sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} /usr/bin/commands.sh
-            #sudo journalctl --unit systemd-nspawn@mnt.service --no-pager
-            #sudo machinectl enable mnt
-            #sudo systemctl status systemd-nspawn@mnt.service
-            #sudo systemctl start systemd-nspawn@mnt.service
-            #sudo systemctl status systemd-nspawn@mnt.service
-            #sudo journalctl --unit systemd-nspawn@mnt.service --no-pager
-            #sudo machinectl start mnt
-            #sudo machinectl list-images
-            #sudo systemd-nspawn --capability=all -D ${{ steps.mount_image.outputs.mount }} /usr/bin/commands.sh
-            #sudo systemd-nspawn --capability=all -bD ${{ steps.mount_image.outputs.mount }}
         else
             sudo chroot ${{ steps.mount_image.outputs.mount }} /tmp/commands.sh
         fi
