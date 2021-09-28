@@ -88,8 +88,8 @@ runs:
         #old
         #sudo mv /usr/bin/qemu-arm-static /usr/bin/qemu-arm-static0
         #sudo gcc -static ${{ github.action_path }}/qemu-wrapper.c -DQEMU_CPU=${{ inputs.cpu }} -O3 -s -o /usr/bin/qemu-arm-static
-        sudo update-binfmts --disable qemu-arm
-        sudo update-binfmts --enable qemu-arm
+        #sudo update-binfmts --disable qemu-arm
+        #sudo update-binfmts --enable qemu-arm
         sudo update-binfmts --disable qemu-aarch64
         sudo update-binfmts --enable qemu-aarch64
       shell: bash
