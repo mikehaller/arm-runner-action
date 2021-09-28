@@ -83,7 +83,8 @@ runs:
         cat /lib/systemd/system/systemd-binfmt.service
         #sudo systemctl stop systemd-binfmt.service
         #sudo systemctl start systemd-binfmt.service
-        sudo /lib/systemd/systemd-binfmt
+        sudo cd /lib/systemd/
+        ./systemd-binfmt
         #old
         #sudo mv /usr/bin/qemu-arm-static /usr/bin/qemu-arm-static0
         #sudo gcc -static ${{ github.action_path }}/qemu-wrapper.c -DQEMU_CPU=${{ inputs.cpu }} -O3 -s -o /usr/bin/qemu-arm-static
