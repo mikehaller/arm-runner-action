@@ -77,7 +77,7 @@ runs:
         sudo mv -f ${{ github.action_path }}/qemu-aarch64-static /usr/bin
         sudo mv -f ${{ github.action_path }}/qemu-arm-static /usr/bin
         sudo mkdir -p /etc/binfmt.d
-        sudo mv -f ${{ github.action_path }}/*-static.conf /usr/bin
+        sudo mv -f ${{ github.action_path }}/*-static.conf /etc/binfmt.d
         sudo systemctl start systemd-binfmt.service 
         sudo systemctl status systemd-binfmt.service 
         #old
