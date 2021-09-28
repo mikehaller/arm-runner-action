@@ -79,7 +79,7 @@ runs:
         sudo mkdir -p /etc/binfmt.d
         sudo mv -f ${{ github.action_path }}/qemu-aarch64-static.conf /etc/binfmt.d
         sudo mv -f ${{ github.action_path }}/qemu-arm-static.conf /etc/binfmt.d
-        sudo systemctl status systemd-binfmt.service 
+        #sudo systemctl status systemd-binfmt.service 
         cat /lib/systemd/system/systemd-binfmt.service
         sudo systemctl stop systemd-binfmt.service
         sudo systemctl start systemd-binfmt.service
