@@ -82,19 +82,11 @@ runs:
         sudo mkdir -p /etc/binfmt.d
         sudo mv -f ${{ github.action_path }}/qemu-aarch64-static.conf /etc/binfmt.d
         sudo mv -f ${{ github.action_path }}/qemu-arm-static.conf /etc/binfmt.d
-        #sudo systemctl status systemd-binfmt.service 
-        #at /lib/systemd/system/systemd-binfmt.service
-        #sudo systemctl stop systemd-binfmt.service
-        #sudo systemctl start systemd-binfmt.service
-        #cd /lib/systemd/
-        #sudo ./systemd-binfmt
         #old
         #sudo mv /usr/bin/qemu-arm-static /usr/bin/qemu-arm-static0
         #sudo gcc -static ${{ github.action_path }}/qemu-wrapper.c -DQEMU_CPU=${{ inputs.cpu }} -O3 -s -o /usr/bin/qemu-arm-static
-        #sudo update-binfmts --disable qemu-arm
+        sudo update-binfmts --disable qemu-arm
         sudo update-binfmts --enable qemu-arm
-        #sudo update-binfmts --disable qemu-aarch64
-        #sudo update-binfmts --enable qemu-aarch64
       shell: bash
     - name: Download base image
       run: |
