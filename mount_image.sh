@@ -19,6 +19,8 @@ if [ ${additional_mb} -gt 0 ]; then
     dd if=/dev/zero bs=1M count=${additional_mb} >> ${image}
 fi
 
+sudo kpartx -v -a ${image}
+
 loopdev=$(losetup --find --show ${image})
 echo "Created loopback device ${loopdev}"
 echo "::set-output name=loopdev::${loopdev}"
