@@ -39,6 +39,9 @@ case $url in
     *.xz)
         uncompress="xz -d"
     ;;
+    *)
+        uncompress="echo Directly using non-compressed image: "
+    ;;
 esac
 
 filename=`basename ${url}`
