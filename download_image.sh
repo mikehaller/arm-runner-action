@@ -48,7 +48,7 @@ filename=`basename ${url}`
 tempdir=${RUNNER_TEMP:-/home/actions/temp}/arm-runner
 mkdir -p ${tempdir}
 cd ${tempdir}
-wget -q ${url}
+wget ${url}
 ${uncompress} ${filename}
 mv "$(ls *.img */*.img 2>/dev/null | head -n 1)" arm-runner.img
 echo "::set-output name=image::${tempdir}/arm-runner.img"
