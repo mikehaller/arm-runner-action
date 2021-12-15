@@ -2,7 +2,7 @@
 set -uo pipefail
 
 image=$1
-additional_mb=$2
+additional_mb=${2-0}
 
 if [ ${additional_mb} -gt 0 ]; then
     dd if=/dev/zero bs=1M count=${additional_mb} >> ${image}
