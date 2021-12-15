@@ -11,8 +11,8 @@ echo "Image: ${image}"
 echo "Additional MB: ${additional_mb}"
 
 if [[ "" -eq "${image}" ]]; then
-  echo "Error: no image"
-  exit 0
+  echo "Error: no image, fallback to image=debian-11.1.0-arm64-netinst.iso"
+  image="image=debian-11.1.0-arm64-netinst.iso"
 fi
 
 if [ ${additional_mb} -gt 0 ]; then
