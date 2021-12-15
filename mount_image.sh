@@ -7,6 +7,14 @@ ls -al
 image=$1
 additional_mb=${2-0}
 
+echo "Image: ${image}"
+echo "Additional MB: ${additional_mb}"
+
+if [[ "" -eq "${image}" ]]; then
+  echo "Error: no image"
+  exit 0
+fi
+
 if [ ${additional_mb} -gt 0 ]; then
     dd if=/dev/zero bs=1M count=${additional_mb} >> ${image}
 fi
