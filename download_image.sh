@@ -24,8 +24,8 @@ case $1 in
         url="$1"
     ;;
     *)
-        echo "Unknown image $1"
-        exit 1
+        echo "Local file does not need downloading: $1"
+        echo "::set-output name=image::${1}"
     ;;
 esac
 
