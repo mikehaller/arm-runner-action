@@ -70,7 +70,7 @@ runs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y qemu qemu-user-static binfmt-support parted wget dosfstools zip
+        sudo apt-get install -y qemu qemu-user-static binfmt-support parted wget dosfstools zip kpartx
       shell: bash
     - name: Install qemu wrapper
       run: |
