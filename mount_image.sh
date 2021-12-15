@@ -1,6 +1,9 @@
 #!/bin/bash
 set -uo pipefail
 
+pwd
+ls -al
+
 image=$1
 additional_mb=${2-0}
 
